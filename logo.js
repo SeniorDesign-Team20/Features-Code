@@ -1,13 +1,14 @@
-import Company_Logo from './files_to_modify/logo.png';
+import Company_Logo from './files_to_modify/logo.jpg';
 
-export default function Logo() {
-    return(
-        <div>
-            <img src={Company_Logo} style={{
-            height: 300,
-            width: 300,
-          }} alt="logo" />
-        </div>
-    )
- }
- 
+const Logo = () => {
+  return(
+    <div>
+        <img src={Company_Logo} style={{
+        height: 100,
+        width: 100,
+      }} alt="logo" />
+    </div>
+)
+}
+
+export default Logo;
