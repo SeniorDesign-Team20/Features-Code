@@ -24,7 +24,7 @@ export default Navbar;
 
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 //import {app_name} from './files_to_modify/app_info';
-
+import {include_about, include_contact, include_help, include_jobs} from './selectedFeatures'
 
 export default function Navbar() {
   return (
@@ -34,9 +34,10 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/about">About</CustomLink>
-        <CustomLink to="/contact">Contact Us</CustomLink>
-        <CustomLink to="/help">Help</CustomLink>
+        {include_about && <CustomLink to="/about">About</CustomLink>}
+        {include_contact && <CustomLink to="/contact">Contact Us</CustomLink>}
+        {include_help && <CustomLink to="/help">Help</CustomLink>}
+        {include_jobs && <CustomLink to="/help">Jobs</CustomLink>}
       </ul>
     </nav>
   )
