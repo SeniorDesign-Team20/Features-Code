@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var app_name = 'My Appp';","map":{"version":3,"names":["app_name"],"sources":["/Users/benyamintrachtenberg/Desktop/EC463/Features-Code/files_to_modify/app_info.js"],"sourcesContent":["// App Name (Modify app name, but keep in quotes)\nexport const app_name = 'My Appp';"],"mappings":"AACA,OAAO,IAAMA,QAAQ,GAAG,SAAS"},"metadata":{},"sourceType":"module"}
