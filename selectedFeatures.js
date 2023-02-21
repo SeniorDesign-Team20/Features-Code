@@ -1,11 +1,17 @@
-// About Feature
-export const include_about   = true;
-
 // Contact Feature
-export const include_contact = true;
+export const include_contact    = true;
 
 // Help Feature
-export const include_help    = true;
+export const include_help       = false;
 
-// Help Feature
-export const include_jobs    = false;
+// Jobs Feature
+export const include_jobs       = false;
+
+// Careers Feature
+export const include_careers    = true;
+
+// People Feature
+export const include_people     = true;
+
+// FAQ Feature
+export const include_faq        = true;
