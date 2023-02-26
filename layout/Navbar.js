@@ -1,5 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import {include_contact, include_help, include_jobs, include_people, include_faq} from './../selectedFeatures'
+import * as features from './../selectedFeatures'
 
 export default function Navbar() {
   return (
@@ -10,11 +10,17 @@ export default function Navbar() {
       <ul>
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/about">About</CustomLink>
-        {include_contact && <CustomLink to="/contact">Contact Us</CustomLink>}
-        {include_help && <CustomLink to="/help">Help</CustomLink>}
-        {include_jobs && <CustomLink to="/help">Jobs</CustomLink>}
-        {include_people && <CustomLink to="/people">People</CustomLink>}
-        {include_faq && <CustomLink to="/faq">FAQs</CustomLink>}
+        {features.include_contact    && <CustomLink to="/contact">Contact Us</CustomLink>}
+        {features.include_help       && <CustomLink to="/help">Help</CustomLink>}
+        {features.include_jobs       && <CustomLink to="/help">Jobs</CustomLink>}
+        {features.include_people     && <CustomLink to="/people">People</CustomLink>}
+        {features.include_faq        && <CustomLink to="/faq">FAQs</CustomLink>}
+        {features.include_weather    && <CustomLink to="/weather">Weather</CustomLink>}
+        {features.include_calendar   && <CustomLink to="/calendar">Calendar</CustomLink>}
+        {features.include_chat       && <CustomLink to="/chat">Chat</CustomLink>}
+        {features.include_fileUpload && <CustomLink to="/fileUpload">Upload File</CustomLink>}
+        {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
+        {features.include_reviews    && <CustomLink to="/reviews">Reviews</CustomLink>}
       </ul>
     </nav>
   )

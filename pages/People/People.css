@@ -1,0 +1,18 @@
+a.phone {
+    color: rgba(58, 162, 253, 0.74);
+}
+
+a.mail {
+    color: rgb(174, 177, 122);
+    transition: transform 250ms;
+    display: inline-block;
+}
+
+a.contact {
+    transition: transform 250ms;
+    display: inline-block;
+}
+
+a.contact:hover {
+    transform: translateY(-2px);
+}
