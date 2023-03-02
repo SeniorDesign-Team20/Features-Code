@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import * as features from './../selectedFeatures'
 
@@ -7,6 +8,7 @@ export default function Navbar() {
       <Link to="/" className="site-title">
       <img src={require('./../files_to_modify/logo.png')}/>
       </Link>
+
       <ul>
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/about">About</CustomLink>
@@ -38,4 +40,3 @@ function CustomLink({ to, children, ...props }) {
     </li>
   )
 }
-
