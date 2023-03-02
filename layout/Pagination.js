@@ -20,6 +20,7 @@ const LazyCalendar     = React.lazy(() => import('./../pages/Calendar/Calendar')
 const LazyChat         = React.lazy(() => import('./../pages/Chat/Chat'));
 const LazyFile_Upload  = React.lazy(() => import('./../pages/File_Upload/File_Upload'));
 const LazyReviews      = React.lazy(() => import('./../pages/Reviews/Reviews'));
+const LazyMap          = React.lazy(() => import('./../pages/Map/Map'));
 
 function Pagination(){
     return(
@@ -40,6 +41,7 @@ function Pagination(){
                 {features.include_chat        && <Route path='/chat'       element={<Suspense><LazyChat/></Suspense>} />}
                 {features.include_fileUpload  && <Route path='/fileUpload' element={<Suspense><LazyFile_Upload/></Suspense>} />}
                 {features.include_reviews     && <Route path='/reviews'    element={<Suspense><LazyReviews/></Suspense>} />}
+                {features.include_map         && <Route path='/map'        element={<Suspense><LazyMap/></Suspense>} />}
             </Routes>
         </div>
     );
