@@ -14,7 +14,7 @@ export const include_careers        = true;
 export const include_people         = true;
 
 // FAQ Feature
-export const include_faq            = true;
+export const include_faq            = false;
 
 // Weather Feature
 export const include_weather        = true;

@@ -6,7 +6,7 @@ import * as features from './../selectedFeatures'
 import Navbar from './Navbar';
 
 import Home from './home_page/Home';
-import About from './../pages/About/About';
+import About from './About/About';
 import Privacy from './../pages/Privacy';
 
 const LazyContact      = React.lazy(() => import('./../pages/Contact'));

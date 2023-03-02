@@ -7,7 +7,7 @@ import { AuthContextProvider } from './AuthContext';
 import * as features from './../../selectedFeatures'
 
 import Home from './../../layout/home_page/Home';
-import About from './..//About/About';
+import About from '../../layout/About/About';
 import Privacy from './../Privacy';
 import Google_Navbar from './Google_Navbar';
 
