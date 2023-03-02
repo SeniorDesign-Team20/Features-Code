@@ -4,7 +4,7 @@ import * as features from './../../selectedFeatures'
 
 import {UserAuth} from './AuthContext';
 
-const Navbar = () => {
+  export default function Google_Navbar() {
     const { user, logOut } = UserAuth();
   
     const handleSignOut = async () => {
@@ -14,16 +14,14 @@ const Navbar = () => {
         console.log(error)
       }
     }
-  }
 
-  export default function Google_Navbar() {
     return (
       <nav className="nav">
         <Link to="/" className="site-title">
         <img src={require('./../../files_to_modify/logo.png')}/>
         </Link>
   
-        {!Navbar.logOut ? (
+        {!user?.displayName ? (
             <ul>
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/about">About</CustomLink>
@@ -47,7 +45,7 @@ const Navbar = () => {
                 {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
                 {features.include_reviews    && <CustomLink to="/reviews">Reviews</CustomLink>}
                 {<CustomLink to="/account">Account</CustomLink>}
-                {<button onClick={Navbar.handleSignOut}>Logout</button>}
+                {<button onClick={handleSignOut}>Logout</button>}
             </ul>
         )}
       </nav>
