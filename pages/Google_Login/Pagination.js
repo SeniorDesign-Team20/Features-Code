@@ -11,7 +11,8 @@ import About from '../../layout/About/About';
 import Privacy from './../Privacy';
 import Google_Navbar from './Google_Navbar';
 
-const LazyContact      = React.lazy(() => import('./../Contact'));
+const LazyContact      = React.lazy(() => import('../Contact/Contact'));
+const LazyThank_You    = React.lazy(() => import('../Contact/ThankYou'));
 const LazyHelp         = React.lazy(() => import('./../Help'));
 const LazyCareers      = React.lazy(() => import('./../Careers'));
 const LazyJobs         = React.lazy(() => import('./../Jobs'));
@@ -36,6 +37,7 @@ function Pagination(){
                 <Route path='/privacy' element={<Protected><Privacy /></Protected>} />
                 <Route path='/about' element={<Protected><About /></Protected>} />
                 {features.include_contact     && <Route path='/contact'    element={<Protected><Suspense><LazyContact/></Suspense></Protected>} />}
+                {features.include_contact     && <Route path='/thankyou'   element={<Suspense><LazyThank_You/></Suspense>} />}
                 {features.include_help        && <Route path='/help'       element={<Protected><Suspense><LazyHelp/></Suspense></Protected>} />}
                 {features.include_jobs        && <Route path='/jobs'       element={<Protected><Suspense><LazyJobs/></Suspense></Protected>} />}
                 {features.include_careers     && <Route path='/careers'    element={<Protected><Suspense><LazyCareers/></Suspense></Protected>} />}

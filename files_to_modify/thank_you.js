@@ -1,0 +1,1 @@
+export const thank_you_message = "Thank you for reaching out to us. Our team will respond as soon as possible. In the mean time, feel free to look at the FAQ page."
