@@ -23,6 +23,7 @@ export default function Navbar() {
         {features.include_fileUpload && <CustomLink to="/fileUpload">Upload File</CustomLink>}
         {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
         {features.include_reviews    && <CustomLink to="/reviews">Reviews</CustomLink>}
+        {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
       </ul>
     </nav>
   )
