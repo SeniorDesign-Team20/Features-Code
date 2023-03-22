@@ -9,7 +9,8 @@ import Home from './home_page/Home';
 import About from './About/About';
 import Privacy from './../pages/Privacy';
 
-const LazyContact      = React.lazy(() => import('./../pages/Contact'));
+const LazyContact      = React.lazy(() => import('../pages/Contact/Contact'));
+const LazyThank_You    = React.lazy(() => import('../pages/Contact/ThankYou'));
 const LazyHelp         = React.lazy(() => import('./../pages/Help'));
 const LazyCareers      = React.lazy(() => import('./../pages/Careers'));
 const LazyJobs         = React.lazy(() => import('./../pages/Jobs'));
@@ -33,6 +34,7 @@ function Pagination(){
                 <Route path='/privacy' element={<Privacy />} />
                 <Route path='/about' element={<About />} />
                 {features.include_contact     && <Route path='/contact'    element={<Suspense><LazyContact/></Suspense>} />}
+                {features.include_contact     && <Route path='/thankyou'   element={<Suspense><LazyThank_You/></Suspense>} />}
                 {features.include_help        && <Route path='/help'       element={<Suspense><LazyHelp/></Suspense>} />}
                 {features.include_jobs        && <Route path='/jobs'       element={<Suspense><LazyJobs/></Suspense>} />}
                 {features.include_careers     && <Route path='/careers'    element={<Suspense><LazyCareers/></Suspense>} />}

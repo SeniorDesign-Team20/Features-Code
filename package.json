@@ -34,8 +34,10 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
     "react-native": "0.70.5",
-    "react-native-svg": "^13.8.0",
+    "react-native-render-html": "^6.3.4",
+    "react-native-svg": "^13.4.0",
     "react-native-web": "~0.18.7",
+    "react-native-webview": "^11.23.1",
     "react-router-dom": "^6.4.3",
     "styled-components": "^5.3.6"
   },
