@@ -25,6 +25,7 @@ const LazyAccount      = React.lazy(() => import('./../Google_Login/Account'));
 const LazySignin       = React.lazy(() => import('./../Google_Login/Signin'));
 const LazyReviews      = React.lazy(() => import('./../Reviews/Reviews'));
 const LazyMap          = React.lazy(() => import('./../Map/Map'));
+const LazyProducts     = React.lazy(() => import('./../Shopping/Products'))
 
 function Pagination(){
     return(
@@ -47,6 +48,7 @@ function Pagination(){
                 {features.include_fileUpload  && <Route path='/fileUpload' element={<Protected><Suspense><LazyFile_Upload/></Suspense></Protected>} />}
                 {features.include_reviews     && <Route path='/reviews'    element={<Protected><Suspense><LazyReviews/></Suspense></Protected>} />}
                 {features.include_map         && <Route path='/map'        element={<Protected><Suspense><LazyMap/></Suspense></Protected>} />}
+                {features.include_products    && <Route path ='/products'  element={<Protected><Suspense><LazyProducts/></Suspense></Protected>}/>}
                 {<Route path='/account'    element={<Protected><Suspense><LazyAccount/></Suspense></Protected>} />}
                 { <Route path='/signin'    element={<Suspense><LazySignin/></Suspense>} />}
                 </Routes>

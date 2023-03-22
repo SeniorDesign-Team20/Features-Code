@@ -21,6 +21,8 @@ const LazyChat         = React.lazy(() => import('./../pages/Chat/Chat'));
 const LazyFile_Upload  = React.lazy(() => import('./../pages/File_Upload/File_Upload'));
 const LazyReviews      = React.lazy(() => import('./../pages/Reviews/Reviews'));
 const LazyMap          = React.lazy(() => import('./../pages/Map/Map'));
+const LazyProducts     = React.lazy(() => import('./../pages/Shopping/Products'))
+
 
 function Pagination(){
     return(
@@ -42,6 +44,8 @@ function Pagination(){
                 {features.include_fileUpload  && <Route path='/fileUpload' element={<Suspense><LazyFile_Upload/></Suspense>} />}
                 {features.include_reviews     && <Route path='/reviews'    element={<Suspense><LazyReviews/></Suspense>} />}
                 {features.include_map         && <Route path='/map'        element={<Suspense><LazyMap/></Suspense>} />}
+                {features.include_products    && <Route path ='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
+
             </Routes>
         </div>
     );

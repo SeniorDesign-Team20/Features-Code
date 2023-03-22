@@ -44,6 +44,7 @@ import {UserAuth} from './AuthContext';
                 {features.include_fileUpload && <CustomLink to="/fileUpload">Upload File</CustomLink>}
                 {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
                 {features.include_reviews    && <CustomLink to="/reviews">Reviews</CustomLink>}
+                {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
                 {<CustomLink to="/account">Account</CustomLink>}
                 {<button onClick={handleSignOut}>Logout</button>}
             </ul>

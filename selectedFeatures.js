@@ -37,3 +37,6 @@ export const include_map            = true;
 // Reviews Feature
 export const include_reviews        = true;
 
+// Products Feature
+export const include_products = true; 
+
