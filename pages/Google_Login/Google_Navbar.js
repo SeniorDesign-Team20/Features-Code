@@ -1,12 +1,15 @@
-import React from 'react';
+import {React, useContext} from 'react';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import * as features from './../../selectedFeatures'
 import { Products } from '../Shopping/Products';
 import {UserAuth} from './AuthContext';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import { CartContext } from './../Shopping/CartContext'
 
   export default function Google_Navbar() {
     const { user, logOut } = UserAuth();
-  
+    const { cartItems } = useContext(CartContext);
     const handleSignOut = async () => {
       try {
         await logOut()
@@ -45,7 +48,8 @@ import {UserAuth} from './AuthContext';
                 {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
                 {features.include_reviews    && <CustomLink to="/reviews">Reviews</CustomLink>}
                 {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
-                {features.include_products   && <CustomLink to="/mycart">{`Shopping Cart`}</CustomLink>}
+                {features.include_products && cartItems.length != 0  && <CustomLink to="/mycart"><FontAwesomeIcon icon={faCartShopping}/><span>{cartItems.length}</span></CustomLink>}
+                
                 {<CustomLink to="/account">Account</CustomLink>}
                 {<button onClick={handleSignOut}>Logout</button>}
             </ul>

@@ -44,7 +44,7 @@ function Products(){
         if (showAlert) {
         timeoutId = setTimeout(() => {
             setShowAlert(false);
-        }, 5000); // hide alert after 3 seconds
+        }, 2500); // hide alert after 3 seconds
         }
         return () => {
         clearTimeout(timeoutId);
@@ -79,7 +79,7 @@ function Products(){
                         <View style = {styles.cardButton}>
                             {addedProduct && addedProduct.name === product.name && showAlert ? (
                                 <Button variant="primary" onClick={() => handleAddToCart(product)}>Add To Cart <FontAwesomeIcon icon={faCartPlus} bounce /> </Button>
-                            ):  <Button variant="primary" onClick={() => handleAddToCart(product)}>Add To Cart <FontAwesomeIcon icon={faCartPlus}  /> </Button>
+                            ):  <Button variant="primary" onClick={() => handleAddToCart(product)}>Add To Cart <FontAwesomeIcon icon={faCartPlus}/> </Button>
                             }
                             {/* Show alert within the card of the added product */}
                             {/* {addedProduct && addedProduct.name === product.name && showAlert &&

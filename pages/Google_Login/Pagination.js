@@ -30,7 +30,7 @@ const LazyReviews      = React.lazy(() => import('./../Reviews/Reviews'));
 const LazyMap          = React.lazy(() => import('./../Map/Map'));
 const LazyProducts     = React.lazy(() => import('./../Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../Shopping/ShoppingCart'))
-const CartProvider  = React.lazy(() => import('./../Shopping/CartContext').then(module => ({ default: module.CartProvider })));
+const CartProvider     = React.lazy(() => import('./../Shopping/CartContext').then(module => ({ default: module.CartProvider })));
 
 function Pagination(){
     return(
