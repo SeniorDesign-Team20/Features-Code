@@ -3,6 +3,7 @@ import { Routes, Route} from 'react-router-dom';
 
 import Protected from './Protected';
 import { AuthContextProvider } from './AuthContext';
+import ProductPage from '../Shopping/ProductPage';
 
 import * as features from './../../selectedFeatures'
 
@@ -57,6 +58,7 @@ function Pagination(){
                     {features.include_map         && <Route path='/map'        element={<Protected><Suspense><LazyMap/></Suspense></Protected>} />}
                     {features.include_products    && <Route path ='/products'  element={<Protected><Suspense><LazyProducts/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/mycart'     element={<Protected><Suspense><LazyCart/></Suspense></Protected>}/>}
+                    {features.include_products    && <Route path='/products/:productId' element={<Protected><Suspense><ProductPage/></Suspense></Protected>}/>}
                     {<Route path='/account'    element={<Protected><Suspense><LazyAccount/></Suspense></Protected>} />}
                     {<Route path='/signin'    element={<Suspense><LazySignin/></Suspense>} />}
                     </Routes>

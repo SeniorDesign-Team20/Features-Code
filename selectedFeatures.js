@@ -11,7 +11,7 @@ export const include_jobs = false;
 export const include_careers = false;
 
 // People Feature
-export const include_people = false;
+export const include_people = true;
 
 // FAQ Feature
 export const include_faq = false;
@@ -29,7 +29,7 @@ export const include_chat = false;
 export const include_fileUpload = false;
 
 // Google Login Feature
-export const include_googleLogin = false;
+export const include_googleLogin = true;
 
 // Map Feature
 export const include_map = false;

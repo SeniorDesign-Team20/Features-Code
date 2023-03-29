@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route} from 'react-router-dom';
 
 import * as features from './../selectedFeatures'
-
+import ProductPage from '../pages/Shopping/ProductPage';
 import Navbar from './Navbar';
 
 import Home from './home_page/Home';
@@ -50,6 +50,7 @@ function Pagination(){
                         {features.include_map         && <Route path='/map'        element={<Suspense><LazyMap/></Suspense>} />}
                         {features.include_products    && <Route path ='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
                         {features.include_products    && <Route path='/mycart'     element={<Suspense><LazyCart/></Suspense>}/>}
+                        {features.include_products    && <Route path='/products/:productId' element={<Suspense><ProductPage/></Suspense>}/>}
                     </Routes>
             </CartProvider>
         </div>
