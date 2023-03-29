@@ -1,7 +1,7 @@
 import {useState, useContext, useEffect} from "react";
 import { StyleSheet } from 'react-native';
 import {Helmet} from "react-helmet";
-import { Container, Row, Col, Card, Button, Alert, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Alert, Form, Toast } from 'react-bootstrap';
 import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { CartContext } from './CartContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,6 +25,7 @@ function Products(){
         addToCart(product);
         setShowAlert(true); // show alert when product is added to cart
         setAddedProduct(product); // set the added product to show the alert within its card
+
       };
     const navigate = useNavigate();
     const handleSort = (option) => {
@@ -59,17 +60,17 @@ function Products(){
       setSearchInput(event.target.value); // update search input state
     }
     // Add effect to hide the alert after a certain amount of time has elapsed
-    useEffect(() => {
-        let timeoutId;
-        if (showAlert) {
-        timeoutId = setTimeout(() => {
-            setShowAlert(false);
-        }, 2500); // hide alert after 3 seconds
-        }
-        return () => {
-        clearTimeout(timeoutId);
-        };
-    }, [showAlert]);
+    // useEffect(() => {
+    //     let timeoutId;
+    //     if (showAlert) {
+    //     timeoutId = setTimeout(() => {
+    //         setShowAlert(false);
+    //     }, 2500); // hide alert after 3 seconds
+    //     }
+    //     return () => {
+    //     clearTimeout(timeoutId);
+    //     };
+    // }, [showAlert]);
         // filter products based on category filter state
         // filter products based on category filter and search input states
       const filteredProducts = allProducts.filter(product => {
@@ -88,6 +89,30 @@ function Products(){
             <meta charSet="utf-8" />
             <title>Products</title>
           </Helmet>
+          {/* style={{ position: 'fixed', top: 0, right: 0, left: 0, bottom: 0 }} */}
+          <div style={{ position: 'fixed', top: 200, right: 0, zIndex: 2000 }}>
+            {showAlert && (
+              <div style={{ position: 'absolute', top: '10px', right: '10px' }}>
+                <Toast
+                  bg="success"
+                  position="middle-end"
+                  onClose={() => setShowAlert(false)}
+                  show={showAlert}
+                  delay={3000}
+                  autohide
+                  style={{ fontSize: '1.5rem', padding: '1rem' }} // Increase font size and padding
+                >
+                  <Toast.Header>
+                    <FontAwesomeIcon icon={faCartPlus} />
+                    <strong className="me-auto">Success</strong>
+                  </Toast.Header>
+                  <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+                    {addedProduct.name} added to cart!
+                  </span>
+                </Toast>
+              </div>
+            )}
+          </div>
           <Container style={styles.heading}>
             <h3 className="main-heading">Products</h3>
             <div className="underline mx-auto"></div>
@@ -97,11 +122,7 @@ function Products(){
           </Container>
           {/* Show alert when product is added to cart */}
           <Container style={styles.alert}>
-            {showAlert &&
-              <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-                <span>Product added to cart!</span>
-              </Alert>
-            }
+
           </Container>
           <Container style={styles.filterSortContainer}>
             <div style={styles.filter}>
@@ -124,7 +145,7 @@ function Products(){
               </select>
             </div>
           </Container>
-          <Container style={styles.container}>
+          <Container style={{ padding: '30px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'flex-start', position: 'relative', zIndex: 1000 }}>
             <Row>
                   {filteredProducts.map((product, index) => (
                   <Card key={index} style={styles.card} >
@@ -163,22 +184,27 @@ const styles = StyleSheet.create({
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       alignItems: 'flex-start',
+      position: 'relative',
+      zIndex: 1000
     },
     card: {
       width: 300,
       margin: 10,
+      //zIndex: 1000
     },
     cardImage: {
-      width: '100%',
       height: '100%',
-      resizeMode: 'cover',
+      width: '100%',
+      resizeMode: 'contain',
     },
     cardButton: {
        flex: 1,
        flexDirection: 'row'
     },
-    alert:{
-        paddingTop:20
+    toast:{
+        position: "absolute",
+        paddingTop: 10,
+        paddingLeft: 10,
     },
     filterSortContainer: {
       display: 'flex',

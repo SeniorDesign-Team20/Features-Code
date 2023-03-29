@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import products from "./productData";
-import { Container, Card, Button, Alert } from 'react-bootstrap';
-import { StyleSheet } from 'react-native';
+import { Container, Button, Alert } from 'react-bootstrap';
+import { StyleSheet, Image, View, Text } from 'react-native';
 import { CartContext } from './CartContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCartPlus} from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 function ProductPage() {
   const { productId } = useParams();
@@ -19,69 +19,86 @@ function ProductPage() {
     setAddedProduct(product); // set the added product to show the alert within its card
   };
 
-
-
-  // if (!product) {
-  //   return <div>Product not found</div>;
-  // }
-
   useEffect(() => {
     let timeoutId;
     if (showAlert) {
-    timeoutId = setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setShowAlert(false);
-    }, 2500); // hide alert after 3 seconds
+      }, 2500); // hide alert after 3 seconds
     }
     return () => {
-    clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
     };
-    }, [showAlert]);
+  }, [showAlert]);
   
   return (
     <Container style={styles.container}>
-    {/* Show alert when product is added to cart */}
-    {showAlert &&
-    <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-        Product added to cart!
-    </Alert>}
-      <Card style={styles.card}>
-        <Card.Img variant="top" src={product.image} style={styles.cardImage} />
-        <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{"$"+product.price}</Card.Subtitle>
-          <Card.Text>{product.description}</Card.Text>
-          <Container style = {styles.cardButton}>
-                        {addedProduct && addedProduct.name === product.name && showAlert ? (
-                            <Button variant="primary" onClick={() => handleAddToCart(product)}>Add To Cart <FontAwesomeIcon icon={faCartPlus} bounce /> </Button>
-                        ):  <Button variant="primary" onClick={() => handleAddToCart(product)}>Add To Cart <FontAwesomeIcon icon={faCartPlus}/> </Button>}             
-          </Container>
-        </Card.Body>
-      </Card>
+      {/* Show alert when product is added to cart */}
+      {showAlert &&
+        <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
+          Product added to cart!
+        </Alert>
+      }
+      <View style={styles.productContainer}>
+        <Image source={{ uri: product.image }} style={styles.productImage} />
+        <View style={styles.productDetails}>
+          <Text style={styles.productName}>{product.name}</Text>
+          <Text style={styles.productPrice}>{"$" + product.price}</Text>
+          <Text style={styles.productDescription}>{product.description}</Text>
+          <View style={styles.buttonContainer}>
+            {addedProduct && addedProduct.name === product.name && showAlert ? (
+              <Button variant="primary" onClick={() => handleAddToCart(product)}>
+                Add To Cart <FontAwesomeIcon icon={faCartPlus} bounce />
+              </Button>
+            ):  
+              <Button variant="primary" onClick={() => handleAddToCart(product)}>
+                Add To Cart <FontAwesomeIcon icon={faCartPlus}/>
+              </Button>
+            }             
+          </View>
+        </View>
+      </View>
     </Container>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    card: {
-      width: 300,
-      margin: 10,
-    },
-    cardImage: {
-      width: '100%',
-      height: '100%',
-      resizeMode: 'cover',
-    },
-    cardButton: {
-        flex: 1,
-        flexDirection: 'row'
-     },
-  });
-  
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    padding: 10,
+  },
+  productContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    overflow: 'hidden',
+    padding: 10,
+    width: '100%',
+  },
+  productImage: {
+    width: '40%',
+    height: 1000,
+    resizeMode: 'contain',
+  },
+  productDetails: {
+    flex: 1,
+    marginLeft: 10,
+    paddingTop: 500
+  },
+  productName: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  productPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+ 
+});
 
 export default ProductPage;
