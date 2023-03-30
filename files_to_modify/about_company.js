@@ -1,3 +1,7 @@
+export const home_header = "The Best App Ever Created (max 10 words?)"
+
+export const home_description = "Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of (max 40 words?)."
+
 export const about_company = "Our Company is the best in the world and no one can beat it. We have amazing products that everyone loves us so much. We only get 5 star reviews and people only have nice things to say about us. We make tons of money because we're the best and have been dominating the world since 1849. Our products are only the highest quality, and of course, all of our products are made in {insert target contry}. Everyone wants to work for us because we are the best and all of our employees are the epitome of awesome people."
 
 export const vision = "Our vision is to be the best company ever so that you don't have to worry about deciding which company is the best."

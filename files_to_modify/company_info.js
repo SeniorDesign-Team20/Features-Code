@@ -12,3 +12,9 @@ export const facebook = "https://www.facebook.com"
 export const twitter = "https://www.twitter.com"
 
 export const instagram = "https://www.instagram.com"
+
+export const contact_form_email = "bennit6@gmail.com"
+
+export const application_form_email = "bennit6@gmail.com"
+
+export const domain_name = "http://localhost:19006"

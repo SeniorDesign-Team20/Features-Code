@@ -1,25 +1,25 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./ThankYou.css"
-import { thank_you_message } from "../../files_to_modify/thank_you";
+import "./privacy.css"
+import { privacy_policy } from "../../files_to_modify/about_company";
 
-function ThankYou(){
+function Privacy(){
     return(
         <div>
             {/* Tab Name */}
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Thank You</title>
+                <title>Privacy Policy</title>
             </Helmet>
 
             <section className="section bg-c-light border-bottom">
                 <div className='container'>
-                    <h3 className="main-heading">Thank You</h3>
+                    <h3 className="main-heading">Privacy Policy</h3>
                     <div className="underline mx-auto"></div>
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-text">{thank_you_message}</p>
+                            <p className="card-text">{privacy_policy}</p>
                         </div>
                     </div>
                 </div>
@@ -29,4 +29,4 @@ function ThankYou(){
     );
 }
 
-export default ThankYou;
+export default Privacy;
