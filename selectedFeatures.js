@@ -4,9 +4,6 @@ export const include_contact = true;
 // Help Feature
 export const include_help = false;
 
-// Jobs Feature
-export const include_jobs = false;
-
 // Careers Feature
 export const include_careers = false;
 
@@ -39,4 +36,16 @@ export const include_reviews = true;
 
 // Products Feature
 export const include_products = true; 
+
+// About Feature
+export const include_about = true;
+
+// Privacy Policy Feature
+export const include_privacy = true;
+
+// Store Hours Feature
+export const include_hours = true;
+
+// Job Application Feature
+export const include_apply = true;
 

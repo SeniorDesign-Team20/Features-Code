@@ -1,29 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-//import RenderHtml from 'react-native-render-html';
 import { useWindowDimensions } from 'react-native';
-//import {WebView} from 'react-native-webview';
-//import HTML_FILE from './contact.html';
-
-
-const source = {
-    html: `
-    <head>
-        <meta charset="utf-8">
-        <title>Contact Form</title>
-    </head>
-    <body>
-
-        <form action="https://formsubmit.co/bennit6@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Contact From Customer">
-            <input type="text" name="name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="message" placeholder="Write your message here">
-            <button type="submit">Send</button>
-        </form>
-
-    </body>`
-};
+import {contact_form_email, domain_name} from "./../../files_to_modify/company_info"
 
 
 function Contact(){
@@ -36,29 +14,29 @@ function Contact(){
                 <title>Contact Us</title>
             </Helmet>
 
-            <div class="container">
+            <div className="container">
                 <div className='container'>
                     <h3 className="main-heading">Contact Us</h3>
                     <div className="underline mx-auto"></div>
                 </div>
-                <form target="_blank" action="https://formsubmit.co/bennit6@gmail.com" method="POST">
+                <form target="_blank" action={"https://formsubmit.co/" + contact_form_email} method="POST">
                     <input type="hidden" name="_subject" value="New Contact From Customer"/>
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name" required/>
+                    <div className="form-group">
+                        <div className="form-row">
+                            <div className="col">
+                                <input type="text" name="name" className="form-control" placeholder="Full Name" required/>
                             </div>
-                            <div class="col">
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" required/>
+                            <div className="col">
+                                <input type="email" name="email" className="form-control" placeholder="Email Address" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                    <div className="form-group">
+                        <textarea placeholder="Your Message" className="form-control" name="message" rows="10" required></textarea>
                     </div>
                     <input type="hidden" name="_template" value="table"></input>
-                    <input type="hidden" name="_next" value="http://localhost:19006/thankyou"></input>
-                    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+                    <input type="hidden" name="_next" value={domain_name + "/thankyou"}></input>
+                    <button type="submit" className="btn btn-lg btn-dark btn-block">Submit Form</button>
                 </form>
             </div>
         </div>
