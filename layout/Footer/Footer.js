@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {faFacebook,faTwitter,faInstagram} from "@fortawesome/free-brands-svg-icons";
 
-import {include_about, include_privacy, include_contact, include_careers, include_people, include_faq} from './../../selectedFeatures'
+import * as features from './../../selectedFeatures'
 import {company_name, address, number, email, facebook, instagram, twitter} from './../../files_to_modify/company_info';
 import './Footer.css';
 
@@ -34,30 +34,38 @@ const Footer = () => (
 
       <div className="gpt3__footer-links_div">
         <h4>Company</h4>
-        {include_about && <Link to="/about">
+        {features.include_about && <Link to="/about">
             <p>Mission</p>
         </Link>}
 
-        {include_people &&<Link to="/people">
+        {features.include_people &&<Link to="/people">
             <p>People</p>
         </Link>}
 
-        {include_careers && <Link to="/careers">
+        {features.include_careers && <Link to="/careers">
             <p>Careers</p>
+        </Link>}
+
+        {features.include_apply && <Link to="/apply">
+            <p>Apply</p>
         </Link>}
       </div>
 
       <div className="gpt3__footer-links_div">
         <h4>Info</h4>
-        {include_contact && <Link to="/contact">
+        {features.include_contact && <Link to="/contact">
         <p>Contact Us</p>
         </Link>}
 
-        {include_faq && <Link to="/faq">
+        {features.include_faq && <Link to="/faq">
             <p>FAQs</p>
         </Link>}
 
-        {include_privacy && <Link to="/privacy">
+        {features.include_hours && <Link to="/hours">
+            <p>Hours of Operation</p>
+        </Link>}
+
+        {features.include_privacy && <Link to="/privacy">
         <p>Privacy Policy</p>
         </Link>}
       </div>

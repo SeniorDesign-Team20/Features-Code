@@ -30,6 +30,8 @@ export default function Navbar() {
         {features.include_fileUpload && <CustomLink to="/fileUpload">Upload File</CustomLink>}
         {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
         {features.include_apply      && <CustomLink to="/apply">Apply Now</CustomLink>}
+        {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
+        {features.include_products && cartItems.length != 0  && <CustomLink to="/mycart"><FontAwesomeIcon icon={faCartShopping}/><span>{cartItems.length}</span></CustomLink>}
       </ul>
     </nav>
   )
