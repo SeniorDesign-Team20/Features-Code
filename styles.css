@@ -99,6 +99,23 @@
     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   }
+
+  .dark-toast {
+    background-color: #343a40;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-toast .toast-header {
+      background-color: rgba(52, 58, 64, 0.85);
+      color: white;
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-toast .toast-body {
+      color: white;
+  }
+
   
   @-webkit-keyframes scale-up-center {
     0% {

@@ -1,8 +1,14 @@
-import React from 'react';
+import {React, useContext} from 'react';
+import { Text } from 'react-native';
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import * as features from './../selectedFeatures'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import { CartContext } from './../pages/Shopping/CartContext'
 
 export default function Navbar() {
+  const { cartItems } = useContext(CartContext);
+
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
