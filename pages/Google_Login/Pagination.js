@@ -30,6 +30,9 @@ const LazySignin       = React.lazy(() => import('./../Google_Login/Signin'));
 const LazyMap          = React.lazy(() => import('./../Map/Map'));
 const LazyApply        = React.lazy(() => import('./../Apply/Apply'));
 const LazyApplyThankYou= React.lazy(() => import('./../Apply/Apply_Thank_You'));
+const LazyQR           = React.lazy(() => import('./../QR/QR'));
+const LazyPhoto_Booth  = React.lazy(() => import('./../Photo_Booth/Photo_Booth'));
+const LazyCalculator   = React.lazy(() => import('./../Calculator/Calculator'));
 const LazyProducts     = React.lazy(() => import('./../Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../Shopping/ShoppingCart'))
 const CartProvider     = React.lazy(() => import('./../Shopping/CartContext').then(module => ({ default: module.CartProvider })));
@@ -57,7 +60,10 @@ function Pagination(){
                     {features.include_fileUpload  && <Route path='/fileUpload' element={<Protected><Suspense><LazyFile_Upload/></Suspense></Protected>} />}
                     {features.include_map         && <Route path='/map'        element={<Protected><Suspense><LazyMap/></Suspense></Protected>} />}
                     {features.include_apply       && <Route path='/apply'      element={<Protected><Suspense><LazyApply /></Suspense></Protected>} />}
-                    {features.include_apply       && <Route path='/thanks'   element={<Protected><Suspense><LazyApplyThankYou/></Suspense></Protected>} />}
+                    {features.include_apply       && <Route path='/thanks'     element={<Protected><Suspense><LazyApplyThankYou/></Suspense></Protected>} />}
+                    {features.include_qr          && <Route path='/qr'         element={<Protected><Suspense><LazyQR /></Suspense></Protected>} />}
+                    {features.include_photoBooth  && <Route path='/photoBooth' element={<Protected><Suspense><LazyPhoto_Booth /></Suspense></Protected>} />}
+                    {features.include_calculator  && <Route path='/calculator' element={<Protected><Suspense><LazyCalculator /></Suspense></Protected>} />}
                     {features.include_products    && <Route path ='/products'  element={<Protected><Suspense><LazyProducts/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/mycart'     element={<Protected><Suspense><LazyCart/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/products/:productId' element={<Protected><Suspense><ProductPage/></Suspense></Protected>}/>}

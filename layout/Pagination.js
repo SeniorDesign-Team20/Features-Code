@@ -23,6 +23,9 @@ const LazyFile_Upload  = React.lazy(() => import('./../pages/File_Upload/File_Up
 const LazyMap          = React.lazy(() => import('./../pages/Map/Map'));
 const LazyApply        = React.lazy(() => import('./../pages/Apply/Apply'));
 const LazyApplyThankYou= React.lazy(() => import('./../pages/Apply/Apply_Thank_You'));
+const LazyQR           = React.lazy(() => import('./../pages/QR/QR'));
+const LazyPhoto_Booth  = React.lazy(() => import('./../pages/Photo_Booth/Photo_Booth'));
+const LazyCalculator   = React.lazy(() => import('./../pages/Calculator/Calculator'));
 const LazyProducts     = React.lazy(() => import('./../pages/Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../pages/Shopping/ShoppingCart'))
 const CartProvider     = React.lazy(() => import('./../pages/Shopping/CartContext').then(module => ({ default: module.CartProvider })));
@@ -50,7 +53,10 @@ function Pagination(){
                         {features.include_map         && <Route path='/map'        element={<Suspense><LazyMap/></Suspense>} />}
                         {features.include_apply       && <Route path='/apply'      element={<Suspense><LazyApply /></Suspense>} />}
                         {features.include_apply       && <Route path='/thanks'   element={<Suspense><LazyApplyThankYou/></Suspense>} />}
-                        {features.include_products    && <Route path ='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
+                        {features.include_qr          && <Route path='/qr'         element={<Suspense><LazyQR /></Suspense>} />}
+                        {features.include_photoBooth  && <Route path='/photoBooth' element={<Suspense><LazyPhoto_Booth /></Suspense>} />}
+                        {features.include_calculator  && <Route path='/calculator' element={<Suspense><LazyCalculator /></Suspense>} />}
+                        {features.include_products    && <Route path='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
                         {features.include_products    && <Route path='/mycart'     element={<Suspense><LazyCart/></Suspense>}/>}
                         {features.include_products    && <Route path='/products/:productId' element={<Suspense><ProductPage/></Suspense>}/>}
                     </Routes>

@@ -29,6 +29,9 @@ export default function Navbar() {
         {features.include_chat       && <CustomLink to="/chat">Chat</CustomLink>}
         {features.include_fileUpload && <CustomLink to="/fileUpload">Upload File</CustomLink>}
         {features.include_map        && <CustomLink to="/map">Map</CustomLink>}
+        {features.include_qr         && <CustomLink to="/qr">QR Scanner</CustomLink>}
+        {features.include_photoBooth && <CustomLink to="/photoBooth">PhotoBooth</CustomLink>}
+        {features.include_calculator && <CustomLink to="/calculator">Calculator</CustomLink>}
         {features.include_apply      && <CustomLink to="/apply">Apply Now</CustomLink>}
         {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
         {features.include_products && cartItems.length != 0  && <CustomLink to="/mycart"><FontAwesomeIcon icon={faCartShopping}/><span>{cartItems.length}</span></CustomLink>}
