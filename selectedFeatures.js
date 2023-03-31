@@ -49,3 +49,18 @@ export const include_hours = true;
 // Job Application Feature
 export const include_apply = true;
 
+// Job Application Feature
+export const include_qr = true;
+
+// Job Application Feature
+export const include_photoBooth = true;
+
+// Job Application Feature
+export const include_calculator = true;
+
+// Job Application Feature
+export const include_chatbot = true;
+
+// Job Application Feature
+export const include_activityFeed = true;
+
