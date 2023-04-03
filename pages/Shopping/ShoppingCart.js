@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { CartContext } from './CartContext';
@@ -10,6 +10,8 @@ import { CartContext } from './CartContext';
 function ShoppingCart() {
   //const { cartItems, setCartItems, cartItemCount, setCartItemCount } = props;
   const { cartItems, removeFromCart } = useContext(CartContext);
+  const history = useHistory();
+
   const calculateTotal = () => {
     let total = 0;
     cartItems.forEach(item => {
@@ -20,7 +22,7 @@ function ShoppingCart() {
   const checkout = () => {
     // your checkout logic goes here
     console.log('Checkout clicked');
-    console.log(cartItems.length);
+    history.push('/checkout');
   };
   return (
     <Container>     
@@ -63,7 +65,7 @@ function ShoppingCart() {
       <Row>
         <Col>
           <Text style={styles.totalText}>Total: ${calculateTotal()}</Text>
-          <Button variant="primary" style={styles.checkoutButton}> Checkout </Button>
+          <Button variant="primary" style={styles.checkoutButton} onClick={checkout}> Checkout </Button>
         </Col>
       </Row>
       </div>

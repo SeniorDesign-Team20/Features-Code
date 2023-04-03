@@ -30,28 +30,6 @@ const CartProvider     = React.lazy(() => import('./../pages/Shopping/CartContex
 function Pagination(){
     return(
         <div>
-<<<<<<< HEAD
-            <Navbar />
-            <Routes>
-                <Route exact path='/' element={<Home />} />
-                {features.include_privacy     && <Route path='/privacy'    element={<Suspense><LazyPrivacy /></Suspense>} />}
-                {features.include_about       && <Route path='/about'      element={<Suspense><LazyAbout /></Suspense>} />}
-                {features.include_hours       && <Route path='/hours'      element={<Suspense><LazyHours /></Suspense>} />}
-                {features.include_contact     && <Route path='/contact'    element={<Suspense><LazyContact/></Suspense>} />}
-                {features.include_contact     && <Route path='/thankyou'   element={<Suspense><LazyThank_You/></Suspense>} />}
-                {features.include_help        && <Route path='/help'       element={<Suspense><LazyHelp/></Suspense>} />}
-                {features.include_careers     && <Route path='/careers'    element={<Suspense><LazyCareers/></Suspense>} />}
-                {features.include_people      && <Route path='/people'     element={<Suspense><LazyPeople/></Suspense>} />}
-                {features.include_faq         && <Route path='/faq'        element={<Suspense><LazyFAQ/></Suspense>} />}
-                {features.include_weather     && <Route path='/weather'    element={<Suspense><LazyWeather/></Suspense>} />}
-                {features.include_calendar    && <Route path='/calendar'   element={<Suspense><LazyCalendar/></Suspense>} />}
-                {features.include_chat        && <Route path='/chat'       element={<Suspense><LazyChat/></Suspense>} />}
-                {features.include_fileUpload  && <Route path='/fileUpload' element={<Suspense><LazyFile_Upload/></Suspense>} />}
-                {features.include_map         && <Route path='/map'        element={<Suspense><LazyMap/></Suspense>} />}
-                {features.include_apply       && <Route path='/apply'      element={<Suspense><LazyApply /></Suspense>} />}
-                {features.include_apply       && <Route path='/thanks'   element={<Suspense><LazyApplyThankYou/></Suspense>} />}
-            </Routes>
-=======
             <CartProvider>
                 <Navbar />
                     <Routes>
@@ -61,7 +39,7 @@ function Pagination(){
                         {features.include_contact     && <Route path='/contact'    element={<Suspense><LazyContact/></Suspense>} />}
                         {features.include_contact     && <Route path='/thankyou'   element={<Suspense><LazyThank_You/></Suspense>} />}
                         {features.include_help        && <Route path='/help'       element={<Suspense><LazyHelp/></Suspense>} />}
-                        {features.include_jobs        && <Route path='/jobs'       element={<Suspense><LazyJobs/></Suspense>} />}
+                        {/* {features.include_jobs        && <Route path='/jobs'       element={<Suspense><LazyJobs/></Suspense>} />} */}
                         {features.include_careers     && <Route path='/careers'    element={<Suspense><LazyCareers/></Suspense>} />}
                         {features.include_people      && <Route path='/people'     element={<Suspense><LazyPeople/></Suspense>} />}
                         {features.include_faq         && <Route path='/faq'        element={<Suspense><LazyFAQ/></Suspense>} />}
@@ -74,9 +52,10 @@ function Pagination(){
                         {features.include_products    && <Route path ='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
                         {features.include_products    && <Route path='/mycart'     element={<Suspense><LazyCart/></Suspense>}/>}
                         {features.include_products    && <Route path='/products/:productId' element={<Suspense><ProductPage/></Suspense>}/>}
+                        {features.include_apply       && <Route path='/apply'      element={<Suspense><LazyApply /></Suspense>} />}
+                        {features.include_apply       && <Route path='/thanks'   element={<Suspense><LazyApplyThankYou/></Suspense>} />}    
                     </Routes>
             </CartProvider>
->>>>>>> d8f3fcdf9a9f5cc19a80000a01b31748d5bb3fae
         </div>
     );
 }

@@ -28,12 +28,12 @@ const LazyFile_Upload  = React.lazy(() => import('./../File_Upload/File_Upload')
 const LazyAccount      = React.lazy(() => import('./../Google_Login/Account'));
 const LazySignin       = React.lazy(() => import('./../Google_Login/Signin'));
 const LazyMap          = React.lazy(() => import('./../Map/Map'));
-const LazyApply        = React.Lazy(() => import('./../Apply/Apply'));
+const LazyApply        = React.lazy(() => import('./../Apply/Apply'));
 const LazyApplyThankYou= React.lazy(() => import('./../Apply/Apply_Thank_You'));
 const LazyProducts     = React.lazy(() => import('./../Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../Shopping/ShoppingCart'))
 const CartProvider     = React.lazy(() => import('./../Shopping/CartContext').then(module => ({ default: module.CartProvider })));
-
+const LazyCheckout     = React.lazy(() => import('./../Shopping/Checkout'));
 function Pagination(){
     return(
         <div>
@@ -61,6 +61,7 @@ function Pagination(){
                     {features.include_products    && <Route path ='/products'  element={<Protected><Suspense><LazyProducts/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/mycart'     element={<Protected><Suspense><LazyCart/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/products/:productId' element={<Protected><Suspense><ProductPage/></Suspense></Protected>}/>}
+                    {features.include_products    && <Route path='/checkout' element={<Protected><Suspense><LazyCheckout/></Suspense></Protected>}/>}
                     {<Route path='/account'    element={<Protected><Suspense><LazyAccount/></Suspense></Protected>} />}
                     {<Route path='/signin'    element={<Suspense><LazySignin/></Suspense>} />}
                     </Routes>
