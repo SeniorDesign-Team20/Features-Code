@@ -1,3 +1,5 @@
+// run: rm -rf node_modules/expo-camera/node_modules/react if the QR throws an error
+
 import {Helmet} from "react-helmet";
 import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TouchableOpacity, Linking } from 'react-native';
@@ -45,8 +47,8 @@ function QR(){
                 <title>QR Code Scanner</title>
             </Helmet>
             
-            <div class="card text-center">
-                <div class="card-body">
+            <div className="card text-center">
+                <div className="card-body">
                     <Camera
                         className='camera'
                         type={Camera.Constants.Type.back}
@@ -60,8 +62,8 @@ function QR(){
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-body col-sm-4">
+            <div className="card">
+                <div className="card-body col-sm-4">
                 <View className='overlay'>
                     {scanned &&(
                         <TouchableOpacity className='button' onPress={resetScanner}>
@@ -71,9 +73,9 @@ function QR(){
                 </View>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-body">       
+
+            <div className="card">
+                <div className="card-body">       
                 {link ? (
                     <View className='linkContainer'>
                     <Text className='linkText'>Scanned Link:</Text>

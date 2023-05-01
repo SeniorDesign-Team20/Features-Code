@@ -8,7 +8,7 @@ export const include_help = false;
 export const include_careers = false;
 
 // People Feature
-export const include_people = true;
+export const include_people = false;
 
 // FAQ Feature
 export const include_faq = false;
@@ -17,19 +17,19 @@ export const include_faq = false;
 export const include_weather = true;
 
 // Calendar Feature
-export const include_calendar = false;
+export const include_calendar = true;
 
 // Chat Feature
-export const include_chat = false;
+export const include_chat = true;
 
 // File Upload Feature
-export const include_fileUpload = false;
+export const include_fileUpload = true;
 
 // Google Login Feature
 export const include_googleLogin = true;
 
 // Map Feature
-export const include_map = false;
+export const include_map = true;
 
 // Reviews Feature
 export const include_reviews = true;
@@ -49,18 +49,21 @@ export const include_hours = true;
 // Job Application Feature
 export const include_apply = true;
 
-// Job Application Feature
+// QR Code Scanner Feature
 export const include_qr = true;
 
-// Job Application Feature
+// Photobooth Feature
 export const include_photoBooth = true;
 
-// Job Application Feature
+// Calculator Feature
 export const include_calculator = true;
 
-// Job Application Feature
+// Chatbot Feature
 export const include_chatbot = true;
 
-// Job Application Feature
+// Activity Feed Feature
 export const include_activityFeed = true;
+
+// Menu Feature
+export const include_menu = true;
 

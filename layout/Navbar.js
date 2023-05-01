@@ -21,6 +21,7 @@ export default function Navbar() {
         {features.include_hours      && <CustomLink to="/hours">Hours</CustomLink>}
         {features.include_contact    && <CustomLink to="/contact">Contact Us</CustomLink>}
         {features.include_help       && <CustomLink to="/help">Help</CustomLink>}
+        {features.include_menu       && <CustomLink to="/menu">Menu</CustomLink>}
         {features.include_careers    && <CustomLink to="/careers">Careers</CustomLink>}
         {features.include_people     && <CustomLink to="/people">People</CustomLink>}
         {features.include_faq        && <CustomLink to="/faq">FAQs</CustomLink>}
@@ -32,6 +33,7 @@ export default function Navbar() {
         {features.include_qr         && <CustomLink to="/qr">QR Scanner</CustomLink>}
         {features.include_photoBooth && <CustomLink to="/photoBooth">PhotoBooth</CustomLink>}
         {features.include_calculator && <CustomLink to="/calculator">Calculator</CustomLink>}
+        {features.include_chatbot    && <CustomLink to="/chatbot">Chatbot</CustomLink>}
         {features.include_apply      && <CustomLink to="/apply">Apply Now</CustomLink>}
         {features.include_products   && <CustomLink to="/products">Products</CustomLink>}
         {features.include_products && cartItems.length != 0  && <CustomLink to="/mycart"><FontAwesomeIcon icon={faCartShopping}/><span>{cartItems.length}</span></CustomLink>}

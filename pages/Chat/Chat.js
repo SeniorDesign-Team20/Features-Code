@@ -96,11 +96,11 @@ function Chat(){
                 <meta charSet="utf-8" />
                 <title>Chat</title>
             </Helmet>
-            <div class="card">
-                <div class="card-header">
+            <div className="card">
+                <div className="card-header">
                     Chat With Others Online!
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     {user && <Channel user={user} db={db} />}
                     {user ? (!include_googleLogin && <Button onPress={signOut}>Sign out</Button>) : (<Button onPress={signInWithGoogle}>Sign in!</Button>)}
                 </div>
