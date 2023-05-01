@@ -1,0 +1,57 @@
+.mapDiv {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  
+  .clearButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    padding: 8px 16px;
+    background: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .routeButton {
+    position: absolute;
+    top: 10px;
+    left: 125px;
+    z-index: 10;
+    padding: 8px 16px;
+    background: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  .car{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    z-index: 10;
+  }
+
+  .bike{
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    z-index: 10;
+  }
+
+  .walk{
+    position: absolute;
+    top: 50px;
+    left: 118px;
+    z-index: 10;
+  }
+
+  .reverse{
+    position: absolute;
+    top: 50px;
+    left: 215px;
+    z-index: 10;
+  }

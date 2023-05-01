@@ -33,6 +33,8 @@ const LazyApplyThankYou= React.lazy(() => import('./../Apply/Apply_Thank_You'));
 const LazyQR           = React.lazy(() => import('./../QR/QR'));
 const LazyPhoto_Booth  = React.lazy(() => import('./../Photo_Booth/Photo_Booth'));
 const LazyCalculator   = React.lazy(() => import('./../Calculator/Calculator'));
+const LazyChatbot      = React.lazy(() => import('./../Chatbot/Chatbot'));
+const LazyMenu         = React.lazy(() => import('./../Menu/Menu'));
 const LazyProducts     = React.lazy(() => import('./../Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../Shopping/ShoppingCart'))
 const CartProvider     = React.lazy(() => import('./../Shopping/CartContext').then(module => ({ default: module.CartProvider })));
@@ -51,6 +53,7 @@ function Pagination(){
                     {features.include_contact     && <Route path='/contact'    element={<Protected><Suspense><LazyContact/></Suspense></Protected>} />}
                     {features.include_contact     && <Route path='/thankyou'   element={<Protected><Suspense><LazyThank_You/></Suspense></Protected>} />}
                     {features.include_help        && <Route path='/help'       element={<Protected><Suspense><LazyHelp/></Suspense></Protected>} />}
+                    {features.include_menu        && <Route path='/menu'       element={<Protected><Suspense><LazyMenu/></Suspense></Protected>} />}
                     {features.include_careers     && <Route path='/careers'    element={<Protected><Suspense><LazyCareers/></Suspense></Protected>} />}
                     {features.include_people      && <Route path='/people'     element={<Protected><Suspense><LazyPeople/></Suspense></Protected>} />}
                     {features.include_faq         && <Route path='/faq'        element={<Protected><Suspense><LazyFAQ/></Suspense></Protected>} />}
@@ -64,6 +67,7 @@ function Pagination(){
                     {features.include_qr          && <Route path='/qr'         element={<Protected><Suspense><LazyQR /></Suspense></Protected>} />}
                     {features.include_photoBooth  && <Route path='/photoBooth' element={<Protected><Suspense><LazyPhoto_Booth /></Suspense></Protected>} />}
                     {features.include_calculator  && <Route path='/calculator' element={<Protected><Suspense><LazyCalculator /></Suspense></Protected>} />}
+                    {features.include_chatbot     && <Route path='/chatbot'    element={<Protected><Suspense><LazyChatbot /></Suspense></Protected>} />}
                     {features.include_products    && <Route path ='/products'  element={<Protected><Suspense><LazyProducts/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/mycart'     element={<Protected><Suspense><LazyCart/></Suspense></Protected>}/>}
                     {features.include_products    && <Route path='/products/:productId' element={<Protected><Suspense><ProductPage/></Suspense></Protected>}/>}

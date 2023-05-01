@@ -26,6 +26,8 @@ const LazyApplyThankYou= React.lazy(() => import('./../pages/Apply/Apply_Thank_Y
 const LazyQR           = React.lazy(() => import('./../pages/QR/QR'));
 const LazyPhoto_Booth  = React.lazy(() => import('./../pages/Photo_Booth/Photo_Booth'));
 const LazyCalculator   = React.lazy(() => import('./../pages/Calculator/Calculator'));
+const LazyChatbot      = React.lazy(() => import('./../pages/Chatbot/Chatbot'));
+const LazyMenu         = React.lazy(() => import('./../pages/Menu/Menu'));
 const LazyProducts     = React.lazy(() => import('./../pages/Shopping/Products'))
 const LazyCart         = React.lazy(() => import('./../pages/Shopping/ShoppingCart'))
 const CartProvider     = React.lazy(() => import('./../pages/Shopping/CartContext').then(module => ({ default: module.CartProvider })));
@@ -43,6 +45,7 @@ function Pagination(){
                         {features.include_contact     && <Route path='/contact'    element={<Suspense><LazyContact/></Suspense>} />}
                         {features.include_contact     && <Route path='/thankyou'   element={<Suspense><LazyThank_You/></Suspense>} />}
                         {features.include_help        && <Route path='/help'       element={<Suspense><LazyHelp/></Suspense>} />}
+                        {features.include_menu        && <Route path='/menu'       element={<Suspense><LazyMenu/></Suspense>} />}
                         {features.include_careers     && <Route path='/careers'    element={<Suspense><LazyCareers/></Suspense>} />}
                         {features.include_people      && <Route path='/people'     element={<Suspense><LazyPeople/></Suspense>} />}
                         {features.include_faq         && <Route path='/faq'        element={<Suspense><LazyFAQ/></Suspense>} />}
@@ -56,6 +59,7 @@ function Pagination(){
                         {features.include_qr          && <Route path='/qr'         element={<Suspense><LazyQR /></Suspense>} />}
                         {features.include_photoBooth  && <Route path='/photoBooth' element={<Suspense><LazyPhoto_Booth /></Suspense>} />}
                         {features.include_calculator  && <Route path='/calculator' element={<Suspense><LazyCalculator /></Suspense>} />}
+                        {features.include_chatbot     && <Route path='/chatbot'    element={<Suspense><LazyChatbot /></Suspense>} />}
                         {features.include_products    && <Route path='/products'  element={<Suspense><LazyProducts/></Suspense>}/>}
                         {features.include_products    && <Route path='/mycart'     element={<Suspense><LazyCart/></Suspense>}/>}
                         {features.include_products    && <Route path='/products/:productId' element={<Suspense><ProductPage/></Suspense>}/>}

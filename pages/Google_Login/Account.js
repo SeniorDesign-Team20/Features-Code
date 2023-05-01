@@ -4,6 +4,7 @@ import {Helmet} from "react-helmet";
 
 const Account = () => {
   const { logOut, user } = UserAuth();
+  
 
   const handleSignOut = async () => {
     try {

@@ -23,20 +23,20 @@ const localizer = dateFnsLocalizer({
 
 const events = [
     {
-        title: "Big Meeting",
+        title: "ECE Day",
         allDay: true,
-        start: new Date(2021, 6, 0),
-        end: new Date(2021, 6, 0),
+        start: new Date(2023, 4, 5),
+        end: new Date(2023, 4, 6),
     },
     {
-        title: "Vacation",
-        start: new Date(2021, 6, 7),
-        end: new Date(2021, 6, 10),
+        title: "Graduation",
+        start: new Date(2023, 4, 19),
+        end: new Date(2023, 4, 22),
     },
     {
-        title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23),
+        title: "Star Wars Day",
+        start: new Date(2023, 4, 4),
+        end: new Date(2023, 4, 5),
     },
 ];
 
@@ -72,6 +72,7 @@ function Calendar(){
         
         
         setAllEvents([...allEvents, newEvent]);
+        events.push(newEvent)
     }
 
     return(
@@ -83,13 +84,14 @@ function Calendar(){
             </Helmet>
 
             <div className="App">
-                <h1>Calendar</h1>
+                <h3 className="main-heading">Calendar</h3>
+                <div className="underline mx-auto"></div>
                 <h2>Add New Event</h2>
                 <div>
-                    <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px", color: "black" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
-                    <DatePicker placeholderText="Start Date" style={{ marginRight: "10px"}} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
+                    <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px", color: "#181717" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
+                    <DatePicker placeholderText="Start Date" style={{ marginRight: "100px", color: "#181717"}} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
                     <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
-                    <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
+                    <button stlye={{ marginTop: "10px" , color: "#181717"}} onClick={handleAddEvent}>
                         Add Event
                     </button>
                 </div>

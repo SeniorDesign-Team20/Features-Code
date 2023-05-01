@@ -1,6 +1,6 @@
 import React from 'react';
 //import people from '../../assets/people.png';
-import companyPhoto from './../../files_to_modify/logo.png';
+import companyPhoto from './../../files_to_modify/home_photo.png';
 import {home_header, home_description} from './../../files_to_modify/about_company';
 import './header.css';
 
