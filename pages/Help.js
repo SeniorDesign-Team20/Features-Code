@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Helmet} from "react-helmet";
-import { YouTubeEmbed, InstagramEmbed, FacebookEmbed , TwitterEmbed, LinkedInEmbed, PinterestEmbed, TikTokEmbed} from 'react-social-media-embed';
 
 function Help(){    
     return(

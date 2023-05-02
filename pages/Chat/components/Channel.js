@@ -12,7 +12,7 @@ const Channel = ({ user = null, db = null }) => {
     useEffect(() => {
         if (db) {
             const unsubscribe = db
-                .collection('messages')
+                .collection('collection2')
                 .orderBy('createdAt')
                 .limit(100)
                 .onSnapshot((querySnapshot) => {
@@ -36,7 +36,7 @@ const Channel = ({ user = null, db = null }) => {
 
     const handleOnSubmit = () => {
         if (db && newMessage) {
-            db.collection('messages').add({
+            db.collection('collection2').add({
                 text: newMessage,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                 uid,
@@ -61,7 +61,7 @@ const Channel = ({ user = null, db = null }) => {
             />
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TextInput
-                    style={{ flex: 1, height: 40, marginRight: 10, borderWidth: 1 }}
+                    style={{ flex: 1, height: 40, marginRight: 10, borderWidth: 1, padding: 5, }}
                     value={newMessage}
                     onChangeText={handleOnChange}
                     placeholder="Type your message here ..."

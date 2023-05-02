@@ -9,33 +9,6 @@ const Message = ({
     displayName = '',
     photoURL = '',
 }) => {
-
-    // return (
-    //     <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-    //         {photoURL ? (
-    //             <Image
-    //                 source={{ uri: photoURL }}
-    //                 style={{ width: 20, height: 20, marginRight: 10 }}
-    //             />
-    //         ) : null}
-    //         <View>
-    //             {/* prints the name of the user */}
-    //             {displayName ? (
-    //                 <Text style={{ margin: 0, marginRight: '0.5em' }}>{displayName}</Text>
-    //             ) : null}
-
-    //             <Text style={{ margin: 0, color: 'red' }}>{text}</Text>
-
-    //             {/* prints the date the message was sent */}
-    //             {createdAt && createdAt.seconds ? (
-    //                 <Text style={{ fontSize: 10, color: 'grey', marginLeft: '0.5em' }}>
-    //                     {formatRelative(new Date(createdAt.seconds * 1000), new Date())}
-    //                 </Text>
-    //             ) : null}
-    //         </View>
-    //     </View>
-    // );
-
     return (
         <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
           <View style={{
@@ -44,7 +17,8 @@ const Message = ({
             borderRadius: 5,
             padding: 5,
             marginRight: 10,
-            minWidth: 200
+            minWidth: 200,
+            margin: 5,
           }}>
             {photoURL &&
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -58,7 +32,7 @@ const Message = ({
               </View>
             }
       
-            <Text style={{ margin: 0, color: 'red', flex:1 }}>{text}</Text>
+            <Text style={{ margin: 0, color: 'red', flex:1, marginRight: 10 }}>{text}</Text>
       
             {createdAt && createdAt.seconds &&
               <Text style={{ fontSize: 10, color: 'grey', marginLeft: '0.5em' }}>

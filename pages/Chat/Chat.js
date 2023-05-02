@@ -1,9 +1,8 @@
 import {Helmet} from "react-helmet";
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, TextInput } from 'react-native';
+import { View, Text, } from 'react-native';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { initializeApp } from 'firebase/app';
 import 'firebase/compat/firestore';
 import Button from './components/Button';
 import Channel from './components/Channel';
@@ -54,7 +53,7 @@ function Chat(){
 
     const handleSend = async () => {
         const { uid, photoURL } = auth.currentUser;
-        await db.collection('messages').add({
+        await db.collection('collection2').add({
             text: newMessage,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
@@ -74,7 +73,7 @@ function Chat(){
 
     useEffect(() => {
         const unsubscribe = db
-            .collection('messages')
+            .collection('collection2')
             .orderBy('createdAt', 'asc')//prints the messages in ascending order
             .onSnapshot((snapshot) => {
                 const messages = snapshot.docs.map((doc) => {

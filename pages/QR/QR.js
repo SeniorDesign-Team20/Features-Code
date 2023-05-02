@@ -78,7 +78,7 @@ function QR(){
                 <div className="card-body">       
                 {link ? (
                     <View className='linkContainer'>
-                    <Text className='linkText'>Scanned Link:</Text>
+                    <p className='linkText'>Scanned Link:</p>
                     <Text className='link' onPress={() => Linking.openURL(link)}>
                         {link}
                     </Text>
@@ -86,38 +86,6 @@ function QR(){
                 ) : null}
                 </div>
             </div>
-            
-            
-{/*
-            <View className='container'>
-                <Camera
-                    className='camera'
-                    type={Camera.Constants.Type.back}
-                    barCodeScannerSettings={{
-                    barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
-                    }}
-                    onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                >
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </Camera>
-                
-                <View className='overlay'>
-                    {scanned &&(
-                        <TouchableOpacity className='button' onPress={resetScanner}>
-                        <Text className='buttonText'>Scan Again</Text>
-                        </TouchableOpacity>
-                    )}
-                </View>
-
-                {link ? (
-                    <View className='linkContainer'>
-                    <Text className='linkText'>Scanned Link:</Text>
-                    <Text className='link' onPress={() => Linking.openURL(link)}>
-                        {link}
-                    </Text>
-                    </View>
-                ) : null}
-                </View>*/}
         </div>
     );
 }

@@ -191,25 +191,3 @@ function Map() {
 }
 
 export default Map;
-// function Map(){
-//     // var map = tt.map({
-//     //     key: 'rAfnH5DzOABNKPXgGL8agWiv8AP3mfNI',
-//     //     container: 'map',
-//     //     dragPan: !isMobileOrTablet()
-//     // });
-//     // map.addControl(new tt.FullscreenControl());
-//     // map.addControl(new tt.NavigationControl());
-//     return(
-//         <div>
-//             {/* Tab Name */}
-//             <Helmet>
-//                 <meta charSet="utf-8" />
-//                 <title>Map</title>
-//             </Helmet>
-
-//             <div>This is the Map</div>
-//             {/* <div id='map' class='map'></div> */}
-//         </div>
-//     );
-// }
-
