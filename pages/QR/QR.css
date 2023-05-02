@@ -37,13 +37,15 @@
 }
 
 .linkText {
-      font-Size: 50;
+      font-Size: 10;
       font-Weight: 'bold';
       color: rgb(50, 36, 242);
+      padding:10;
 }
 
 .link {
       font-Size: 14;
       color: rgb(50, 36, 242);
       text-Decoration-Line: 'underline';
+      padding:10;
 }

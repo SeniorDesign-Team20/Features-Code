@@ -31,13 +31,6 @@ export default function App() {
           <Footer />
         </div>
       </Router>  
-
-    {/*
-      <View style={styles.container}>
-        <Text>This is the generated app</Text>
-        <StatusBar style="auto" />
-      </View>
-    */}
     </View>
   );
 }

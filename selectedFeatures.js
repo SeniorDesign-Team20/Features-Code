@@ -5,13 +5,13 @@ export const include_contact = true;
 export const include_help = false;
 
 // Careers Feature
-export const include_careers = false;
+export const include_careers = true;
 
 // People Feature
-export const include_people = false;
+export const include_people = true;
 
 // FAQ Feature
-export const include_faq = false;
+export const include_faq = true;
 
 // Weather Feature
 export const include_weather = true;
@@ -26,7 +26,7 @@ export const include_chat = true;
 export const include_fileUpload = true;
 
 // Google Login Feature
-export const include_googleLogin = true;
+export const include_googleLogin = false;
 
 // Map Feature
 export const include_map = true;
@@ -53,13 +53,13 @@ export const include_apply = true;
 export const include_qr = true;
 
 // Photobooth Feature
-export const include_photoBooth = true;
+export const include_photoBooth = false;
 
 // Calculator Feature
-export const include_calculator = true;
+export const include_calculator = false;
 
 // Chatbot Feature
-export const include_chatbot = true;
+export const include_chatbot = false;
 
 // Activity Feed Feature
 export const include_activityFeed = true;

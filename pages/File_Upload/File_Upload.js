@@ -10,6 +10,7 @@ import 'firebase/compat/auth';
 import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {include_googleLogin} from './../../selectedFeatures'
 import {company_name} from './../../files_to_modify/company_info'
+import {app_id} from "./../../layout/app_identifier"
 
 function File_Upload(){
     const [user, setUser] = useState(() => auth.currentUser);
@@ -59,11 +60,11 @@ function File_Upload(){
     const [message, setMessage] = useState("");
     const [imageUrls, setImageUrls] = useState([]);
     //const [imagesListRef, setImagesListRef] = user ? useState(ref(storage, `images/${user.email}/`)) : useState(ref(storage, `images/`));
-    const [imagesListRef, setImagesListRef] = useState(ref(storage, `${company_name}/`));
+    const [imagesListRef, setImagesListRef] = useState(ref(storage, `${company_name}-${app_id}/`));
 
     useEffect(() => {
         if (user) {
-          const imagesRef = ref(storage, `${company_name}/${user.email}/`);
+          const imagesRef = ref(storage, `${company_name}-${app_id}/${user.email}/`);
           setImagesListRef(imagesRef);
         }
         console.log('a')
@@ -84,7 +85,7 @@ function File_Upload(){
     const submitData = () =>{
         if (image == "") return;
 
-        const storageRef = ref(storage, `${company_name}/${user.email}/${image.name}`);
+        const storageRef = ref(storage, `${company_name}-${app_id}/${user.email}/${image.name}`);
         uploadBytes(storageRef, image).then((snapshot)=>{
             getDownloadURL(snapshot.ref).then((url) => {
                 setImageUrls((prev) => [...prev, url]);
