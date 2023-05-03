@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, TextInput, Button } from 'react-native';
 import firebase from 'firebase/compat/app';
+import {company_name} from './../../../files_to_modify/company_info'
+import {app_id} from "./../../../layout/app_identifier"
 import Message from './Message';
 
 const Channel = ({ user = null, db = null }) => {
@@ -12,7 +14,7 @@ const Channel = ({ user = null, db = null }) => {
     useEffect(() => {
         if (db) {
             const unsubscribe = db
-                .collection('collection2')
+                .collection(`${company_name}-${app_id}`)
                 .orderBy('createdAt')
                 .limit(100)
                 .onSnapshot((querySnapshot) => {
@@ -36,7 +38,7 @@ const Channel = ({ user = null, db = null }) => {
 
     const handleOnSubmit = () => {
         if (db && newMessage) {
-            db.collection('collection2').add({
+            db.collection(`${company_name}-${app_id}`).add({
                 text: newMessage,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                 uid,

@@ -1,14 +1,13 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-import { useWindowDimensions } from 'react-native';
 import {message_to_applicants, application_autoresponse} from './../../files_to_modify/application'
-import {application_form_email, domain_name} from "./../../files_to_modify/company_info"
+import {application_form_email} from "./../../files_to_modify/company_info"
 
 import "./Apply.css"
 
 
 function Apply(){
-    const { width } = useWindowDimensions();
+    const domain = window.location.href; 
     return(
         <div>
             {/* Tab Name */}
@@ -60,7 +59,7 @@ function Apply(){
                                     <textarea placeholder="Comments" className="form-control" name="Comments" rows="10"></textarea>
                                 </div>
                                 <input type="hidden" name="_template" value="table"></input>
-                                <input type="hidden" name="_next" value={domain_name + "/thanks"}></input>
+                                <input type="hidden" name="_next" value={domain + "/thankyou"}></input>
                                 <input type="hidden" name="_autoresponse" value={application_autoresponse}></input>
                                 <button type="submit" className="btn btn-lg btn-dark btn-block">Submit Form</button>
                             </form>

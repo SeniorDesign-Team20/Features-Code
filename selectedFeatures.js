@@ -5,13 +5,13 @@ export const include_contact = true;
 export const include_help = false;
 
 // Careers Feature
-export const include_careers = true;
+export const include_careers = false;
 
 // People Feature
-export const include_people = true;
+export const include_people = false;
 
 // FAQ Feature
-export const include_faq = true;
+export const include_faq = false;
 
 // Weather Feature
 export const include_weather = true;
@@ -26,7 +26,7 @@ export const include_chat = true;
 export const include_fileUpload = true;
 
 // Google Login Feature
-export const include_googleLogin = false;
+export const include_googleLogin = true;
 
 // Map Feature
 export const include_map = true;
@@ -38,13 +38,13 @@ export const include_reviews = true;
 export const include_products = true; 
 
 // About Feature
-export const include_about = true;
+export const include_about = false;
 
 // Privacy Policy Feature
 export const include_privacy = true;
 
 // Store Hours Feature
-export const include_hours = true;
+export const include_hours = false;
 
 // Job Application Feature
 export const include_apply = true;

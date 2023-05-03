@@ -1,5 +1,5 @@
 import {Helmet} from "react-helmet";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, Text } from "react";
 
 import tt from "@tomtom-international/web-sdk-maps";
 import { services } from "@tomtom-international/web-sdk-services";
@@ -108,7 +108,7 @@ function Map() {
             calculateRoute("green", {
             key,
             locations,
-            travelMode: "bus"
+            travelMode: "bicycle"
             });
         }
 
@@ -167,6 +167,7 @@ function Map() {
             </Helmet>
 
             <div ref={mapElement} className="mapDiv">
+                <button className="instructions">Click on the map to set the route endpoints</button>
                 <button className="clearButton" onClick={clear}>
                 Clear Route
                 </button>

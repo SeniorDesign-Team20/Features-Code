@@ -6,7 +6,7 @@
   
   .clearButton {
     position: absolute;
-    top: 10px;
+    top: 50px;
     left: 10px;
     z-index: 10;
     padding: 8px 16px;
@@ -18,8 +18,8 @@
   
   .routeButton {
     position: absolute;
-    top: 10px;
-    left: 125px;
+    top: 50px;
+    left: 135px;
     z-index: 10;
     padding: 8px 16px;
     background: red;
@@ -30,28 +30,34 @@
 
   .car{
     position: absolute;
-    top: 50px;
+    top: 90px;
     left: 10px;
     z-index: 10;
   }
 
   .bike{
     position: absolute;
-    top: 50px;
+    top: 90px;
     left: 60px;
     z-index: 10;
   }
 
   .walk{
     position: absolute;
-    top: 50px;
-    left: 118px;
+    top: 90px;
+    left: 116px;
     z-index: 10;
   }
 
   .reverse{
     position: absolute;
-    top: 50px;
-    left: 215px;
+    top: 90px;
+    left: 220px;
+    z-index: 10;
+  }
+  .instructions{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     z-index: 10;
   }

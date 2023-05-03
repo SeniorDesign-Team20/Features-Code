@@ -7,6 +7,14 @@ import product4Image from './../../files_to_modify/Products/product4.png';
 import product5Image from './../../files_to_modify/Products/product5.png';
 import product6Image from './../../files_to_modify/Products/product6.png';
 import product7Image from './../../files_to_modify/Products/product7.png';
+import product8Image from "./../../files_to_modify/Products/product8.png";
+import product9Image from "./../../files_to_modify/Products/product9.png";
+import product10Image from "./../../files_to_modify/Products/product10.png";
+import product11Image from "./../../files_to_modify/Products/product11.png";
+import product12Image from "./../../files_to_modify/Products/product12.png";
+import product13Image from "./../../files_to_modify/Products/product13.png";
+import product14Image from "./../../files_to_modify/Products/product14.png";
+import product15Image from "./../../files_to_modify/Products/product15.png";
 // ...
 
 const products = [
@@ -71,7 +79,7 @@ const products = [
     name: productInfo.name8, 
     price: productInfo.price8, 
     description: productInfo.description8, 
-    image: product7Image, 
+    image: product8Image, 
     categories: productInfo.categories8
   },
   { 
@@ -79,7 +87,7 @@ const products = [
     name: productInfo.name9, 
     price: productInfo.price9, 
     description: productInfo.description9, 
-    image: product7Image, 
+    image: product9Image, 
     categories: productInfo.categories9
   },
   { 
@@ -87,7 +95,7 @@ const products = [
     name: productInfo.name10, 
     price: productInfo.price10, 
     description: productInfo.description10, 
-    image: product7Image, 
+    image: product10Image, 
     categories: productInfo.categories10
   },
   { 
@@ -95,7 +103,7 @@ const products = [
     name: productInfo.name11, 
     price: productInfo.price11, 
     description: productInfo.description11, 
-    image: product7Image, 
+    image: product11Image, 
     categories: productInfo.categories11
   },
   { 
@@ -103,7 +111,7 @@ const products = [
     name: productInfo.name12, 
     price: productInfo.price12, 
     description: productInfo.description12, 
-    image: product7Image, 
+    image: product12Image, 
     categories: productInfo.categories12
   },
   { 
@@ -111,7 +119,7 @@ const products = [
     name: productInfo.name13, 
     price: productInfo.price13, 
     description: productInfo.description13, 
-    image: product7Image, 
+    image: product13Image, 
     categories: productInfo.categories13
   },
   { 
@@ -119,7 +127,15 @@ const products = [
     name: productInfo.name14, 
     price: productInfo.price14, 
     description: productInfo.description14,
-    image: product7Image,
+    image: product14Image,
+    categories: productInfo.categories14
+  },
+  { 
+    id: 15, 
+    name: productInfo.name15, 
+    price: productInfo.price15, 
+    description: productInfo.description15,
+    image: product15Image,
     categories: productInfo.categories15
   }
 ];
