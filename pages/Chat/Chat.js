@@ -8,6 +8,8 @@ import Button from './components/Button';
 import Channel from './components/Channel';
 import { auth, db } from '../firebase';
 import {include_googleLogin} from './../../selectedFeatures'
+import {company_name} from './../../files_to_modify/company_info'
+import {app_id} from "./../../layout/app_identifier"
 import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 require('firebase/auth');
@@ -53,7 +55,7 @@ function Chat(){
 
     const handleSend = async () => {
         const { uid, photoURL } = auth.currentUser;
-        await db.collection('collection2').add({
+        await db.collection(`${company_name}-${app_id}`).add({
             text: newMessage,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
@@ -73,7 +75,7 @@ function Chat(){
 
     useEffect(() => {
         const unsubscribe = db
-            .collection('collection2')
+            .collection(`${company_name}-${app_id}`)
             .orderBy('createdAt', 'asc')//prints the messages in ascending order
             .onSnapshot((snapshot) => {
                 const messages = snapshot.docs.map((doc) => {

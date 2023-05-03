@@ -1,11 +1,10 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-import { useWindowDimensions } from 'react-native';
-import {contact_form_email, domain_name} from "./../../files_to_modify/company_info"
+import {contact_form_email} from "./../../files_to_modify/company_info"
 
 
 function Contact(){
-    const { width } = useWindowDimensions();
+    const domain = window.location.href; 
     return(
         <div>
             {/* Tab Name */}
@@ -35,7 +34,7 @@ function Contact(){
                         <textarea placeholder="Your Message" className="form-control" name="message" rows="10" required></textarea>
                     </div>
                     <input type="hidden" name="_template" value="table"></input>
-                    <input type="hidden" name="_next" value={domain_name + "/thankyou"}></input>
+                    <input type="hidden" name="_next" value={domain + "/thankyou"}></input>
                     <button type="submit" className="btn btn-lg btn-dark btn-block">Submit Form</button>
                 </form>
             </div>

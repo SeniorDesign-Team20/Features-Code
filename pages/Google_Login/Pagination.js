@@ -51,7 +51,7 @@ function Pagination(){
                     {features.include_about       && <Route path='/about'      element={<Protected><Suspense><LazyAbout /></Suspense></Protected>} />}
                     {features.include_hours       && <Route path='/hours'      element={<Protected><Suspense><LazyHours /></Suspense></Protected>} />}
                     {features.include_contact     && <Route path='/contact'    element={<Protected><Suspense><LazyContact/></Suspense></Protected>} />}
-                    {features.include_contact     && <Route path='/thankyou'   element={<Protected><Suspense><LazyThank_You/></Suspense></Protected>} />}
+                    {features.include_contact     && <Route path='/contact/thankyou'   element={<Protected><Suspense><LazyThank_You/></Suspense></Protected>} />}
                     {features.include_help        && <Route path='/help'       element={<Protected><Suspense><LazyHelp/></Suspense></Protected>} />}
                     {features.include_menu        && <Route path='/menu'       element={<Protected><Suspense><LazyMenu/></Suspense></Protected>} />}
                     {features.include_careers     && <Route path='/careers'    element={<Protected><Suspense><LazyCareers/></Suspense></Protected>} />}
@@ -63,7 +63,7 @@ function Pagination(){
                     {features.include_fileUpload  && <Route path='/fileUpload' element={<Protected><Suspense><LazyFile_Upload/></Suspense></Protected>} />}
                     {features.include_map         && <Route path='/map'        element={<Protected><Suspense><LazyMap/></Suspense></Protected>} />}
                     {features.include_apply       && <Route path='/apply'      element={<Protected><Suspense><LazyApply /></Suspense></Protected>} />}
-                    {features.include_apply       && <Route path='/thanks'     element={<Protected><Suspense><LazyApplyThankYou/></Suspense></Protected>} />}
+                    {features.include_apply       && <Route path='/apply/thankyou'     element={<Protected><Suspense><LazyApplyThankYou/></Suspense></Protected>} />}
                     {features.include_qr          && <Route path='/qr'         element={<Protected><Suspense><LazyQR /></Suspense></Protected>} />}
                     {features.include_photoBooth  && <Route path='/photoBooth' element={<Protected><Suspense><LazyPhoto_Booth /></Suspense></Protected>} />}
                     {features.include_calculator  && <Route path='/calculator' element={<Protected><Suspense><LazyCalculator /></Suspense></Protected>} />}
