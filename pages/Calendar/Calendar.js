@@ -51,6 +51,9 @@ function Calendar(){
         if (d2<d1){
             alert("Invalid date range. Start date must be before end date")
         }
+        else if(newEvent.title==""){
+            alert("Please add an event title.")
+        }
         else{
             setAllEvents([...allEvents, newEvent]);
             events.push(newEvent)
@@ -69,15 +72,16 @@ function Calendar(){
             <div className="App">
                 <h3 className="main-heading">Calendar</h3>
                 <div className="underline mx-auto"></div>
-                <h2>Add New Event</h2>
                 <div>
-                    <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px", color: "#181717" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
-                    <DatePicker placeholderText="Start Date" style={{ marginRight: "100px", color: "#181717"}} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
+                    <DatePicker placeholderText="Start Date" style={{ marginRight: "100px", color: "#181717",}} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
                     <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
+                    <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px", color: "#181717" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
                     <button stlye={{ marginTop: "10px" , color: "#181717"}} onClick={handleAddEvent}>
                         Add Event
                     </button>
                 </div>
+                <h2>Add New Event</h2>
+                <br/><br/>
                 <Cal localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
             </div>
         </div>

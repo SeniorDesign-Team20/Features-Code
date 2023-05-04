@@ -53,7 +53,7 @@ export const include_apply = true;
 export const include_qr = true;
 
 // Photobooth Feature
-export const include_photoBooth = false;
+export const include_photoBooth = true;
 
 // Calculator Feature
 export const include_calculator = false;
