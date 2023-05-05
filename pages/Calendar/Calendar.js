@@ -8,6 +8,7 @@ import { Calendar as Cal, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./Calendar.css";
 
 const locales = {
