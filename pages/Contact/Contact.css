@@ -1,0 +1,12 @@
+.underline{
+    height: 04px;
+    width: 4rem;
+    background-color: #f76c2f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-heading{
+    color: rgb(204, 18, 18);
+    font-size: 26px;
+}

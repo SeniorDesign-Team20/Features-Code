@@ -1,6 +1,8 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 import {contact_form_email} from "./../../files_to_modify/company_info"
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import './Contact.css'
 
 
 function Contact(){

@@ -2,6 +2,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 import {message_to_applicants, application_autoresponse} from './../../files_to_modify/application'
 import {application_form_email} from "./../../files_to_modify/company_info"
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./Apply.css"
 

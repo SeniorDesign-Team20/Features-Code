@@ -1,6 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 import * as jobs from "./../../files_to_modify/careers"
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./Careers.css"
 
 function Careers(){
